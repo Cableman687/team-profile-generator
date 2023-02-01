@@ -5,18 +5,20 @@ const fs = require('fs');
 //-----------------------------Team Prompt-------------------------------------
 
 // A function containing the team composition prompt
-function teamPrompt() {
+async function teamPrompts() {
+
+    let teamData;
     
-    inquirer.prompt([
+    await inquirer.prompt([
 
         {
             type: 'list',
             name: 'teamType',
             message: 'What type of team member would you like to add? Please select from the below: ',
             choices: [
+                'I dont want to add any more team members',
                 'Engineer',
                 'Intern',
-                'I dont want to add any more team members'
             ],
             default: 'I dont want to add any more team members'     
         },
@@ -27,17 +29,25 @@ function teamPrompt() {
             teamType,
         }
 
+        teamData = data;
+
         // const final = generateMarkdown(data);
         // writeToFile(final);
     }
-)}
+
+    
+)
+return Promise.resolve(teamData);
+}
 
 //-----------------------------Manager Prompts-------------------------------------
 
 // A function containing manager-specific prompts
-function managerPrompts() {
+async function managerPrompts() {
+
+    let managerData;
     
-    inquirer.prompt([
+    await inquirer.prompt([
         {
             type: "input",
             message: "What is the team manager's name?",
@@ -52,45 +62,51 @@ function managerPrompts() {
             type: "input",
             message: "What is the team manager's email?",
             name: "managerEmail",
+            // validate: function(email)
+            // {
+            //     // Regex mail check (return true if valid mail)
+            //     return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+            // }
         },
         {
             type: "input",
             message: "What is the team manager's office number?",
             name: "managerOffice",
         },
-        {
-            type: 'list',
-            name: 'teamType',
-            message: 'What type of team memeber would you like to add? Please select from the below: ',
-            choices: [
-                'Engineer',
-                'Intern',
-                'I dont want to add any more team members'
-            ],
-            default: 'I dont want to add any more team members'     
-        },
     ])
-    .then(({managerName, managerId, managerEmail, managerOffice, teamType}) => {
+    .then(({managerName, managerId, managerEmail, managerOffice}) => {
 
         const data = {
             managerName,
             managerId,
             managerEmail,
             managerOffice,
-            teamType,
         }
+
+        managerData = data;
+        
 
         // const final = generateMarkdown(data);
         // writeToFile(final);
     }
-)}
+
+    
+
+    
+)
+return Promise.resolve(managerData);
+}
+
+
 
 //-----------------------------Engineer Prompts-------------------------------------
 
 // A function containing engineer-specific prompts
-function engineerPrompts() {
+async function engineerPrompts() {
+
+    let engineerData;
     
-    inquirer.prompt([
+    await inquirer.prompt([
         {
             type: "input",
             message: "What is your engineers name?",
@@ -121,48 +137,68 @@ function engineerPrompts() {
             engineerGithub
         }
 
+        engineerData = data;
+
+        
+
         // const final = generateMarkdown(data);
         // writeToFile(final);
     }
-)}
+)
+return Promise.resolve(engineerData);
+}
 
 //-----------------------------Intern Prompts-------------------------------------
 
 // A function containing intern-specific prompts
-function InternPrompts() {
+async function internPrompts() {
+
+    let internData;
     
-    inquirer.prompt([
+    await inquirer.prompt([
         {
             type: "input",
             message: "What is your interns name?",
-            name: "InternName",
+            name: "internName",
         },
         {
             type: "input",
             message: "What is your interns id?",
-            name: "InternId",
+            name: "internId",
         },
         {
             type: "input",
             message: "What is your interns email?",
-            name: "InternEmail",
+            name: "internEmail",
         },
         {
             type: "input",
             message: "What is your interns School?",
-            name: "InternSchool",
+            name: "internSchool",
         },
     ])
-    .then(({InternName, InternId, InternEmail, InternGithub}) => {
+    .then(({internName, internId, internEmail, internSchool,}) => {
 
         const data = {
-            InternName,
-            InternId,
-            InternEmail,
-            InternGithub
+            internName,
+            internId,
+            internEmail,
+            internSchool,
         }
+
+        internData = data;
+
+        
 
         // const final = generateMarkdown(data);
         // writeToFile(final);
     }
-)}
+)
+return Promise.resolve(internData);
+}
+
+
+
+//Exports
+module.exports = {teamPrompts,managerPrompts, engineerPrompts, internPrompts};
+
