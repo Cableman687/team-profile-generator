@@ -1,6 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const generateMarkdown = require("./utils/generateMarkdown");
+
+const Employee = require('../lib/Employee.class');
+const Manager = require('../lib/Manager.class');
+const Engineer = require('../lib/Engineer.class');
+const Intern = require('../lib/Intern.class');
 
 //-----------------------------Team Prompt-------------------------------------
 
@@ -76,22 +80,18 @@ async function managerPrompts() {
     ])
     .then(({managerName, managerId, managerEmail, managerOffice}) => {
 
-        const data = {
-            managerName,
-            managerId,
-            managerEmail,
-            managerOffice,
-        }
+        const manager = new Manager(managerName, managerId, managerEmail, managerOffice);
 
-        managerData = data;
+        // const data = {
+        //     managerName,
+        //     managerId,
+        //     managerEmail,
+        //     managerOffice,
+        // }
         
-
-        // const final = generateMarkdown(data);
-        // writeToFile(final);
+        managerData = manager;
+        
     }
-
-    
-
     
 )
 return Promise.resolve(managerData);
@@ -130,19 +130,18 @@ async function engineerPrompts() {
     ])
     .then(({engineerName, engineerId, engineerEmail, engineerGithub}) => {
 
-        const data = {
-            engineerName,
-            engineerId,
-            engineerEmail,
-            engineerGithub
-        }
+        // const data = {
+        //     engineerName,
+        //     engineerId,
+        //     engineerEmail,
+        //     engineerGithub
+        // }
 
-        engineerData = data;
+        const engineer = new Engineer(engineerName, engineerId, engineerEmail, engineerGithub)
 
-        
+        engineerData = engineer;
 
-        // const final = generateMarkdown(data);
-        // writeToFile(final);
+
     }
 )
 return Promise.resolve(engineerData);
@@ -177,21 +176,19 @@ async function internPrompts() {
             name: "internSchool",
         },
     ])
-    .then(({internName, internId, internEmail, internSchool,}) => {
+    .then(({internName, internId, internEmail, internSchool}) => {
 
-        const data = {
-            internName,
-            internId,
-            internEmail,
-            internSchool,
-        }
+        // const data = {
+        //     internName,
+        //     internId,
+        //     internEmail,
+        //     internSchool,
+        // }
 
-        internData = data;
+        const intern = new Intern(internName, internId, internEmail, internSchool)
 
-        
+        internData = intern;
 
-        // const final = generateMarkdown(data);
-        // writeToFile(final);
     }
 )
 return Promise.resolve(internData);

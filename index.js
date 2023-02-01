@@ -126,24 +126,7 @@ async function init(){
     console.log("Init fired!");
 
     // Run all prompts in correct sequence
-    // const promptResult = await masterPrompts();
     masterPrompts();
-
-    // if(promptResult !== null){
-
-    //     // const cardOutput = await generateCard.generateCard(promptResult);
-
-    //     // const htmlOutput = await generateHTML.generateHTML(cardOutput);
-
-    //     // writeToFile(htmlOutput);
-
-    // }
-
-    
-
-    
-
-
 
 
 }

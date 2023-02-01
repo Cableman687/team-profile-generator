@@ -12,15 +12,15 @@ async function generateCard(resultArr){
     objectArr.forEach((object) => {
 
       var keys = Object.keys(object);
-      console.log(keys);
+      // console.log(keys);
 
-      if(keys[0] == "managerName"){
+      if(keys[3] == "managerName"){
         managerOutput.push(generateManager(object));
 
-      } else if (keys[0] == "engineerName"){
+      } else if (keys[3] == "engineerName"){
         engineerOutput.push(generateEngineer(object));
 
-      } else if (keys[0] == "internName"){
+      } else if (keys[3] == "internName"){
         internOutput.push(generateIntern(object));
 
       } else {
