@@ -17,6 +17,7 @@ describe("Manager", () => {
             expect(manager.managerId).toEqual(idParam);
             expect(manager.managerEmail).toEqual(emailParam);
             expect(manager.managerOffice).toEqual(officeParam);
+            
             expect(manager.getRole()).toBe('Manager');
 
         })

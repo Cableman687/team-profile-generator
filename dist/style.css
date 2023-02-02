@@ -1,7 +1,7 @@
 .body-card {
     border: 1px solid #1a1a1a;
     width: 97%;
-    color: red;
+    color: rgb(0, 0, 0);
     text-indent: 7px;
     background-color: whitesmoke;
 }
@@ -11,4 +11,8 @@
     min-width: 25%;
     background-color: lightskyblue;
 
+}
+
+.text-color {
+    color: rgb(184, 70, 230);
 }

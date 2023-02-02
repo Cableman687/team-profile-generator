@@ -17,8 +17,9 @@ describe("Engineer", () => {
             expect(engineer.engineerId).toEqual(idParam);
             expect(engineer.engineerEmail).toEqual(emailParam);
             expect(engineer.engineerGithub).toEqual(githubParam);
-            expect(engineer.getRole()).toEqual('Engineer');
-            expect(engineer.getGithub()).toBeNull();
+
+            expect(engineer.getRole()).toBe('Engineer');
+            expect(engineer.getGithub()).toEqual(githubParam);
 
         })
     })

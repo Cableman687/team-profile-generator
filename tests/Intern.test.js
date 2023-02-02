@@ -17,8 +17,9 @@ describe("Intern", () => {
             expect(intern.internId).toEqual(idParam);
             expect(intern.internEmail).toEqual(emailParam);
             expect(intern.internSchool).toEqual(schoolParam);
-            expect(intern.getRole()).toEqual('Intern');
-            expect(intern.getSchool()).toBeNull();
+
+            expect(intern.getRole()).toBe('Intern');
+            expect(intern.getSchool()).toEqual(schoolParam);
 
         })
     })
