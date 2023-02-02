@@ -35,8 +35,6 @@ async function teamPrompts() {
 
         teamData = data;
 
-        // const final = generateMarkdown(data);
-        // writeToFile(final);
     }
 
     
@@ -66,11 +64,11 @@ async function managerPrompts() {
             type: "input",
             message: "What is the team manager's email?",
             name: "managerEmail",
-            // validate: function(email)
-            // {
-            //     // Regex mail check (return true if valid mail)
-            //     return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
-            // }
+            validate: function(email)
+            {
+                // Regex mail check (return true if valid mail)
+                return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+            }
         },
         {
             type: "input",
@@ -81,13 +79,6 @@ async function managerPrompts() {
     .then(({managerName, managerId, managerEmail, managerOffice}) => {
 
         const manager = new Manager(managerName, managerId, managerEmail, managerOffice);
-
-        // const data = {
-        //     managerName,
-        //     managerId,
-        //     managerEmail,
-        //     managerOffice,
-        // }
         
         managerData = manager;
         
@@ -121,6 +112,11 @@ async function engineerPrompts() {
             type: "input",
             message: "What is your engineers email?",
             name: "engineerEmail",
+            validate: function(email)
+            {
+                // Regex mail check (return true if valid mail)
+                return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+            }
         },
         {
             type: "input",
@@ -129,13 +125,6 @@ async function engineerPrompts() {
         },
     ])
     .then(({engineerName, engineerId, engineerEmail, engineerGithub}) => {
-
-        // const data = {
-        //     engineerName,
-        //     engineerId,
-        //     engineerEmail,
-        //     engineerGithub
-        // }
 
         const engineer = new Engineer(engineerName, engineerId, engineerEmail, engineerGithub)
 
@@ -169,6 +158,11 @@ async function internPrompts() {
             type: "input",
             message: "What is your interns email?",
             name: "internEmail",
+            validate: function(email)
+            {
+                // Regex mail check (return true if valid mail)
+                return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+            }
         },
         {
             type: "input",
@@ -177,13 +171,6 @@ async function internPrompts() {
         },
     ])
     .then(({internName, internId, internEmail, internSchool}) => {
-
-        // const data = {
-        //     internName,
-        //     internId,
-        //     internEmail,
-        //     internSchool,
-        // }
 
         const intern = new Intern(internName, internId, internEmail, internSchool)
 

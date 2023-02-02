@@ -11,9 +11,6 @@ const Manager = require("./lib/Manager.class");
 //Include Prompts
 const prompts = require("./src/prompts");
 
-//Imports
-// import { managerPrompts } from "./src/prompts";
-
 const engineer = new Engineer();
 const intern = new Intern();
 const manager = new Manager();
@@ -23,8 +20,6 @@ intern;
 manager;
 
 
-
-
 //-------------------------------Master Prompts / Request Team Details------------------------------------
 
 
@@ -32,8 +27,6 @@ let teamResponse;
 let managerResponse;
 let engineerResponse;
 let internResponse;
-
-// let typeAnswer;
 
 const managerArray = [];
 const engineerArray = [];
@@ -86,13 +79,6 @@ async function typeAsk(){
         const htmlOutput = await generateHTML.generateHTML(cardOutput);
 
         writeToFile(htmlOutput);
-
-
-        // return [
-        //     managerArray,
-        //     engineerArray,
-        //     internArray,
-        // ]
    
     } 
 }
