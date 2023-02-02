@@ -5,7 +5,6 @@ async function generateCard(resultArr){
   var engineerOutput = [];
   var internOutput = [];
 
-
   console.log("generateCard fired!");
 
   resultArr.forEach((objectArr) => {
@@ -51,7 +50,7 @@ async function generateCard(resultArr){
       <h3 id="role">${object.getRole()} <i class="fa-solid fa-glasses"></i></i></h3>
       <h4 id="id" class="body-card"><span class="text-color">ID: </span>${object.engineerId}</h4>
       <h4 id="email" class="body-card"><span class="text-color">Email: </span><a href="mailto:${object.engineerEmail}">${object.engineerEmail}</a></h4>
-      <h4 id="Github" class="body-card"><span class="text-color">Github: </span><a href="https://github.com/${object.getGithub()} target="_blank">https://github.com/${object.getGithub()}</a></h4>
+      <h4 id="Github" class="body-card"><span class="text-color">Github: </span><a href="https://github.com/${object.getGithub()}" target="_blank">https://github.com/${object.getGithub()}</a></h4>
     </div> 
 
   `
