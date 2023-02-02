@@ -1,0 +1,14 @@
+.body-card {
+    border: 1px solid #1a1a1a;
+    width: 97%;
+    color: red;
+    text-indent: 7px;
+    background-color: whitesmoke;
+}
+
+#result-card {
+    border: 1px solid #1a1a1a;
+    min-width: 25%;
+    background-color: lightskyblue;
+
+}

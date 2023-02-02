@@ -16,6 +16,13 @@ describe("Employee", () => {
             expect(employee.id).toEqual(idParam);
             expect(employee.email).toEqual(emailParam);
 
+            
+            expect(employee.getName()).toEqual(nameParam);
+            expect(employee.getId()).toEqual(idParam);
+            expect(employee.getEmail()).toEqual(emailParam);
+            expect(employee.getRole()).toBe('Employee');
+
+
         })
     })
 })

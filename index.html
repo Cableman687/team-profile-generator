@@ -5,75 +5,65 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Team Profile Generator</title>
+
     <link rel="stylesheet" href="dist/style.css" />
-<!-- API LINKS-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="dist/jass.css" />
+    
+    <!-- FontAwesomeAPI -->
+    <script src="https://kit.fontawesome.com/8b1ac55e94.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap API -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>
+        
   </head>
 
   <body>
 
-    <header class="text-center bg-dark p-1">
-      <h1 class="text-primary">My Team</h1>
-    </header>
+    <header class="text-center bg-danger p-4">
+      <h1 class="text-primary text-white ">My Team</h1>
+    </header> 
+  
+    <section class="flex-row align-top flex-center bg-light  ">
 
     
   
-    <section class="flex-row align-top flex-start bg-light ">
-    <div class="flex-column p-5 col">
-      <div id="result-card">
-        <h2 id="name">h</h2>
-        <h3 id="role">Manager</h3>
-        <ul id="infoList">
-          <li id="id">h</li>
-          <li id="email">h</li>
-          <li id="officeNumber">h</li>
-        </ul>
-      </div>  
-    </div>     
-  </section>
-  
-  
-    <section class="flex-row align-top flex-start bg-light ">
-    <div class="flex-column p-5 col">
-      <div id="result-card">
-        <h2 id="name">j</h2>
-        <h3 id="role">Engineer</h3>
-        <ul id="infoList">
-          <li id="id">j</li>
-          <li id="email">j</li>
-          <li id="Github">https://github.com/j</li>
-        </ul>
-      </div>  
-    </div>     
-  </section>
-  
-  
-    <section class="flex-row align-top flex-start bg-light ">
-    <div class="flex-column p-5 col">
-      <div id="result-card">
-        <h2 id="name">k</h2>
-        <h3 id="role">Intern</h3>
-        <ul id="infoList">
-          <li id="id">k</li>
-          <li id="email">k</li>
-          <li id="School">k</li>
-        </ul>
-      </div>  
-    </div>     
-  </section>
+
+    <div id="result-card" class="flex-column p-4 card display-flex m-4">
+      <h2 id="name" class=".card-header">Frank</h2>
+      <h3 id="role">Manager <i class="fa fa-coffee"></i></h3>         
+      <h4 id="id" class="body-card">ID: 1</h4>
+      <h4 id="email" class="body-card">Email: <a href="mailto:will_cable@hotmail.com">will_cable@hotmail.com</a></h4>
+      <h4 id="officeNumber" class="body-card">Office Number: 7</h4>         
+    </div>
+
   
   
 
-    <!-- SCRIPT -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
-    crossorigin="anonymous"
-    ></script>
+    <div id="result-card" class="flex-column p-4 card display-flex m-4">
+      <h2 id="name">Will</h2>
+      <h3 id="role">Engineer <i class="fa-solid fa-glasses"></i></i></h3>
+      <h4 id="id" class="body-card">ID: 2</h4>
+      <h4 id="email" class="body-card">Email: will@gmail.com</h4>
+      <h4 id="Github" class="body-card">Github: <a href="https://github.com/Cableman687">https://github.com/Cableman687</a></h4>
+    </div> 
+
+  
+  
+
+    <div id="result-card" class="flex-column p-4 card display-flex m-4">  
+      <h2 id="name">Allan</h2>
+      <h3 id="role">Intern <i class="fa-solid fa-user-graduate"></i></h3>
+      <h4 id="id" class="body-card">ID: 3</h4>
+      <h4 id="email" class="body-card">Email: Allan@gmail.com</h4>
+      <h4 id="School" class="body-card">School: Freddies</h4>
+    </div> 
+
+  
+  
+      
+    </section>
 
     <script src="./index.js"></script>
   </body>

@@ -33,55 +33,43 @@ async function generateCard(resultArr){
 
   function generateManager(object){
     return `
-    <section class="flex-row align-top flex-start bg-light ">
-    <div class="flex-column p-5 col">
-      <div id="result-card">
-        <h2 id="name">${object.managerName}</h2>
-        <h3 id="role">Manager</h3>
-        <ul id="infoList">
-          <li id="id">${object.managerId}</li>
-          <li id="email">${object.managerEmail}</li>
-          <li id="officeNumber">${object.managerOffice}</li>
-        </ul>
-      </div>  
-    </div>     
-  </section>
+
+    <div id="result-card" class="flex-column p-4 card display-flex m-4">
+      <h2 id="name" class=".card-header">${object.managerName}</h2>
+      <h3 id="role">Manager <i class="fa fa-coffee"></i></h3>         
+      <h4 id="id" class="body-card">ID: ${object.managerId}</h4>
+      <h4 id="email" class="body-card">Email: <a href="mailto:${object.managerEmail}">${object.managerEmail}</a></h4>
+      <h4 id="officeNumber" class="body-card">Office Number: ${object.managerOffice}</h4>         
+    </div>
+
   `
   }
 
   function generateEngineer(object){
     return `
-    <section class="flex-row align-top flex-start bg-light ">
-    <div class="flex-column p-5 col">
-      <div id="result-card">
-        <h2 id="name">${object.engineerName}</h2>
-        <h3 id="role">Engineer</h3>
-        <ul id="infoList">
-          <li id="id">${object.engineerId}</li>
-          <li id="email">${object.engineerEmail}</li>
-          <li id="Github">https://github.com/${object.engineerGithub}</li>
-        </ul>
-      </div>  
-    </div>     
-  </section>
+
+    <div id="result-card" class="flex-column p-4 card display-flex m-4">
+      <h2 id="name">${object.engineerName}</h2>
+      <h3 id="role">Engineer <i class="fa-solid fa-glasses"></i></i></h3>
+      <h4 id="id" class="body-card">ID: ${object.engineerId}</h4>
+      <h4 id="email" class="body-card">Email: <a href="mailto:${object.engineerEmail}">${object.engineerEmail}</a></h4>
+      <h4 id="Github" class="body-card">Github: <a href="https://github.com/${object.engineerGithub}">https://github.com/${object.engineerGithub}</a></h4>
+    </div> 
+
   `
   }
 
   function generateIntern(object){
     return `
-    <section class="flex-row align-top flex-start bg-light ">
-    <div class="flex-column p-5 col">
-      <div id="result-card">
-        <h2 id="name">${object.internName}</h2>
-        <h3 id="role">Intern</h3>
-        <ul id="infoList">
-          <li id="id">${object.internId}</li>
-          <li id="email">${object.internEmail}</li>
-          <li id="School">${object.internSchool}</li>
-        </ul>
-      </div>  
-    </div>     
-  </section>
+
+    <div id="result-card" class="flex-column p-4 card display-flex m-4">  
+      <h2 id="name">${object.internName}</h2>
+      <h3 id="role">Intern <i class="fa-solid fa-user-graduate"></i></h3>
+      <h4 id="id" class="body-card">ID: ${object.internId}</h4>
+      <h4 id="email" class="body-card">Email: <a href="mailto:${object.internEmail}">${object.internEmail}</a></h4>
+      <h4 id="School" class="body-card">School: ${object.internSchool}</h4>
+    </div> 
+
   `
   }
 
